@@ -32,6 +32,7 @@ $(document).ready(function () {
 });
 
 var showRandomAnimal = function () {
+    var noImgAvail = "../Images/no-image-found.gif";
     // location.href = "/Home/RandomAnimal"; //redirects to the page, but currently redirects after appending. Unsure how to fix.
     $('#animal').remove();
     console.log("Random: ", currentRandomPet);
@@ -41,8 +42,14 @@ var showRandomAnimal = function () {
         if (currentRandomPet.media.photos.photo !== undefined) {
             $('#animal').append('<img src=' + currentRandomPet.media.photos.photo[2].$t + '>');
         }
+    } else {
+        $('#animal').append('<img src=' + noImgAvail + '>');
     }
-
     $('#animal').append('<p>' + currentRandomPet.name.$t + '</p>');
-    $('#animal').append('<p>' + currentRandomPet.description.$t + '</p>');
+    if (currentRandomPet.description !== null || currentRandomPet.description !== "" || currentRandomPet.description !== " ") {
+        $('#animal').append('<p>' + currentRandomPet.description.$t + '</p>');
+    } else {
+        $('#animal').append('<p>No descripion available for this animal.</p>');
+    }
+    
 };
