@@ -1,5 +1,3 @@
-Features -
-
   In this application, your users will be able to:
 
     Select an animal type to view a random animal of that type
@@ -8,15 +6,20 @@ Features -
 
   Home Page - When users first visit your web app, they will see:
 
-    A drop-down list of animal types -- this list is populated via an array of animal types.
-      Animal types supported by the PetFinder API can be found in their API documentation.
+    A drop-down list of animal types
+      This list is populated via an array of animal types. -- to do. Currently not in array
     A link that takes them to a list of any favorited animals
     A count of the number of favorited animals
 
   Animal View -
 
-    Once an animal is selected from the drop-down list, the application will display a random pet of the selected animal type.
-    This will require a call to the PetFinder API. The pet details should include at least: an image of the pet the name of the pet and the complete description of the pet
+    Once an animal is selected from the drop-down list, the application will display a random
+      pet of the selected animal type.
+    This will require a call to the PetFinder API. --Done
+    The pet details should include at least:
+      An image of the pet
+      The name of the pet
+      The complete description of the pet
 
   Favorites Button -
 
@@ -28,13 +31,15 @@ Features -
       pet image URL
       the first 100 characters of the pet's description
 
-  Your Faves View -
+  Your Favorites View -
 
     When users navigate to this page, they will see a list of all of the animals they have favorited.
     This list will be pulled from the database.
 
 Hard Mode -
+
   Get fancy! Use your own CSS styles to make this amazing!
 
 Pro Mode -
+
   Modify the Favorites view to display animals grouped by animal type.
