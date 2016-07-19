@@ -14,6 +14,7 @@ Features -
     A count of the number of favorited animals
 
   Animal View -
+
     Once an animal is selected from the drop-down list, the application will display a random pet of the selected animal type.
     This will require a call to the PetFinder API. The pet details should include at least: an image of the pet the name of the pet and the complete description of the pet
 
@@ -28,6 +29,7 @@ Features -
       the first 100 characters of the pet's description
 
   Your Faves View -
+
     When users navigate to this page, they will see a list of all of the animals they have favorited.
     This list will be pulled from the database.
 
@@ -36,8 +38,3 @@ Hard Mode -
 
 Pro Mode -
   Modify the Favorites view to display animals grouped by animal type.
-
-API Key
-8c5651bb1f65ed3b8e5163969b917f60
-API Secret
-acf0364dff2bca368ea914bd9e3f1e5c
