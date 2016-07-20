@@ -26,5 +26,12 @@ namespace PetFinder.Controllers
 
             return View();
         }
+
+        public ActionResult RandomAnimal()
+        {
+            ViewBag.Message = "Random Animal.";
+
+            return View();
+        }
     }
 }
