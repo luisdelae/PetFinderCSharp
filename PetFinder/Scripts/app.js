@@ -38,6 +38,7 @@ var showRandomAnimal = function () {
     console.log("Random: ", currentRandomPet);
 
     $('#randomPetPage').append('<div id="animal"></div>');
+
     if (currentRandomPet.media.photos !== undefined) {
         if (currentRandomPet.media.photos.photo !== undefined) {
             $('#animal').append('<img src=' + currentRandomPet.media.photos.photo[2].$t + '>');
