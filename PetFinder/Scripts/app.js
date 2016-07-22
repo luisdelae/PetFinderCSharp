@@ -45,6 +45,7 @@ var showRandomAnimal = function () {
     } else {
         $('#animal').append('<img src=' + noImgAvail + '>');
     }
+
     $('#animal').append('<p>' + currentRandomPet.name.$t + '</p>');
     if (currentRandomPet.description !== null || currentRandomPet.description !== "" || currentRandomPet.description !== " ") {
         $('#animal').append('<p>' + currentRandomPet.description.$t + '</p>');
