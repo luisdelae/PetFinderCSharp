@@ -22,7 +22,11 @@ $(document).ready(function () {
         })
         .done(function (response) {
             currentRandomPet = response.petfinder.pet;
-            showRandomAnimal();
+            $.get("/Home/RandomAnimal").then(function () {
+                currentRandomPet = response.petfinder.pet;
+                showRandomAnimal();
+            }); //redirects to the page, but currently redirects without executing function.
+            
 
         })
         .fail(function () {
@@ -33,7 +37,6 @@ $(document).ready(function () {
 
 var showRandomAnimal = function () {
     var noImgAvail = "../Images/no-image-found.gif";
-    // location.href = "/Home/RandomAnimal"; //redirects to the page, but currently redirects after appending. Unsure how to fix.
     $('#animal').remove();
     console.log("Random: ", currentRandomPet);
 
