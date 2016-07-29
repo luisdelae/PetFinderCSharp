@@ -209,3 +209,7 @@ C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\bin\Microsoft.Owin.Secu
 C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\obj\Debug\PetFinder.csprojResolveAssemblyReference.cache
 C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\obj\Debug\PetFinder.dll
 C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\obj\Debug\PetFinder.pdb
+C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\bin\System.Web.Http.dll
+C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\bin\System.Web.Http.WebHost.dll
+C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\bin\System.Web.Http.xml
+C:\Users\Luisdela\Source\Repos\PetFinderCSharp\PetFinder\bin\System.Web.Http.WebHost.xml

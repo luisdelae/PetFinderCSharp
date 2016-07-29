@@ -1,6 +1,4 @@
-﻿var currentRandomPet;
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
 
 
@@ -10,51 +8,27 @@ $(document).ready(function () {
         var query = "pet.getRandom";
         var animalType = $("#animalTypes option:selected").val();
         var params = '?key=' + key + '&animal=' + animalType + '&output=basic&format=json';
-        var request = baseURL + query + encodeURI(params) + "&callback=?";
 
-        event.preventDefault();
+
+        var request = { requestUrl: baseURL + query + params };
+         
+        //event.preventDefault();
 
         $.ajax({
-            type: "GET",
-            dataType: "jsonp",
-            url: request,
-            async: true
-        })
-        .done(function (response) {
-            currentRandomPet = response.petfinder.pet;
-            $.get("/Home/RandomAnimal").then(function () {
-                currentRandomPet = response.petfinder.pet;
-                showRandomAnimal();
-            }); //redirects to the page, but currently redirects without executing function.
-            
+            type: 'POST',
+            url: '/RandomAnimal/Index',
+            data: JSON.stringify(request),
+            dataType: 'html',
+            contentType: 'application/json',
+            traditional: true,
+            success: function (data) {
+                console.log(data);
+            },
+            //error: function () {
+            //    alert("error");
+            //},
+            async: false
 
-        })
-        .fail(function () {
-            console.log("Failed");
         });
     });
 });
-
-var showRandomAnimal = function () {
-    var noImgAvail = "../Images/no-image-found.gif";
-    $('#animal').remove();
-    console.log("Random: ", currentRandomPet);
-
-    $('#randomPetPage').append('<div id="animal"></div>');
-
-    if (currentRandomPet.media.photos !== undefined) {
-        if (currentRandomPet.media.photos.photo !== undefined) {
-            $('#animal').append('<img src=' + currentRandomPet.media.photos.photo[2].$t + '>');
-        }
-    } else {
-        $('#animal').append('<img src=' + noImgAvail + '>');
-    }
-
-    $('#animal').append('<p>' + currentRandomPet.name.$t + '</p>');
-    if (currentRandomPet.description !== null || currentRandomPet.description !== "" || currentRandomPet.description !== " ") {
-        $('#animal').append('<p>' + currentRandomPet.description.$t + '</p>');
-    } else {
-        $('#animal').append('<p>No descripion available for this animal.</p>');
-    }
-    
-};
